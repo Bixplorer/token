@@ -13,10 +13,6 @@ contract MyToken is ERC20, ERC20Burnable, Ownable {
         _mint(initialOwner, 200_000_000_000 ether);
     }
 
-    function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount);
-    }
-
     function withdraw(address token, address to) public onlyOwner {
         if (token == address(0)) {
             uint256 balance = address(this).balance;
